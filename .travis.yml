@@ -1,0 +1,32 @@
+language: python
+
+dist: focal
+
+python:
+ - "3.6.12"
+
+install:
+ - pip install --pre poetry -U
+ - poetry install
+
+services:
+ - postgresql
+
+before_script:
+ - cd printacc
+ - psql -c "CREATE DATABASE printacc_db;" -U postgres
+ - psql -c "CREATE USER printacc_user with encrypted password 'printacc_pass';" -U postgres
+ - psql -c "GRANT ALL PRIVILEGES ON DATABASE printacc_db TO printacc_user;" -U postgres
+ - psql -c "ALTER USER printacc_user createdb;" -U postgres
+ - python manage.py migrate --noinput
+
+env:
+ global:
+   - DEBUG=on
+   - SECRET_KEY="dev"
+   - DATABASE_URL=psql://printacc_user:printacc_pass@127.0.0.1:5432/printacc_db
+
+script:
+ - pytest tests
+ - python manage.py test
+ - flake8

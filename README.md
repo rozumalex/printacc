@@ -7,7 +7,7 @@ Print Accounting System
 ---
 
 ## Installation Guide
-To run printacc on your device, please follow the instruction.
+To get a copy of printacc to your device, please follow next steps:
 
 ### Install pyenv
 Follow the [instructions](https://github.com/pyenv/pyenv#installation)
@@ -28,6 +28,7 @@ git clone https://github.com/rozumalex/printacc
 ```
 pip install --pre poetry -U
 poetry install
+poetry shell
 ```
 
 ### Install PostgreSQL, then create database and user
@@ -53,10 +54,16 @@ DEBUG=on
 SECRET_KEY="dev"
 DATABASE_URL=psql://printacc_user:printacc_pass@127.0.0.1:5432/printacc_db
 ```
+***Note:*** then press Ctrl+X and save changes
 
 ### Apply migrations to database
 ```
 python manage.py migrate
+```
+
+### Run server
+```
+python manage.py runserver
 ```
 
 ## License

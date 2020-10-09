@@ -32,7 +32,7 @@ poetry install
 
 ### Install PostgreSQL, then create database and user
 ```
-sudo apt-get install postgres libpq-dev -y
+sudo apt-get install postgres libpq-dev python-dev -y
 sudo -u postgres psql
 
 CREATE DATABASE printacc_db;
@@ -40,6 +40,7 @@ CREATE USER printacc_user with encrypted password 'printacc_pass';
 GRANT ALL PRIVILEGES ON DATABASE printacc_db TO printacc_user;
 ALTER USER printacc_user createdb;
 ```
+***Note:*** then press Ctrl+D
 
 ### Create .env file
 ```

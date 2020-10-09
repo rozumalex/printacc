@@ -1,5 +1,5 @@
 # printacc 
-[![Build Status](https://travis-ci.org/rozumalex/printacc.svg?branch=master)](https://travis-ci.org/github/rozumalex/printacc)
+[![Build Status](https://travis-ci.com/rozumalex/printacc.svg?branch=main)](https://travis-ci.org/github/rozumalex/printacc)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/rozumalex/printacc/blob/master/LICENSE)
 
 Print Accounting System

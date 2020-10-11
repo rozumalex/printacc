@@ -1,4 +1,5 @@
 # printacc 
+
 [![Build Status](https://travis-ci.com/rozumalex/printacc.svg?branch=main)](https://travis-ci.org/github/rozumalex/printacc)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/rozumalex/printacc/blob/master/LICENSE)
 
@@ -10,10 +11,10 @@ Print Accounting System
 To get a copy of printacc to your device, please follow next steps:
 
 ### Install pyenv
-Follow the [instructions](https://github.com/pyenv/pyenv#installation)
+Follow the [instructions](https://github.com/pyenv/pyenv#installation) according to your OS
 
 ### Install Python 3.6
-```
+``` 
 pyenv install 3.6.12
 ```
 
@@ -24,7 +25,6 @@ git clone https://github.com/rozumalex/printacc
 
 ### Install poetry and dependencies
 ***Note:*** you should change the directory to project's folder to install dependencies
-
 ```
 pip install --pre poetry -U
 poetry install
@@ -33,7 +33,7 @@ poetry shell
 
 ### Install PostgreSQL, then create database and user
 ```
-sudo apt-get install postgres libpq-dev python-dev -y
+sudo apt install postgresql libpq-dev python-dev
 sudo -u postgres psql
 
 CREATE DATABASE printacc_db;
@@ -48,9 +48,10 @@ ALTER USER printacc_user createdb;
 cd printacc
 nano .env
 ```
+
 ### And insert following values:
 ```
-DEBUG=on
+DEBUG=True
 SECRET_KEY="dev"
 DATABASE_URL=psql://printacc_user:printacc_pass@127.0.0.1:5432/printacc_db
 ```
@@ -61,12 +62,15 @@ DATABASE_URL=psql://printacc_user:printacc_pass@127.0.0.1:5432/printacc_db
 python manage.py migrate
 ```
 
+### Create superuser
+```
+python manage.py createsuperuser
+```
+
 ### Run server
 ```
 python manage.py runserver
 ```
 
 ## License
-
 This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/rozumalex/printacc/blob/master/LICENSE) file for details.
-

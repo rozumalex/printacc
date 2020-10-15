@@ -27,6 +27,8 @@ env:
    - DATABASE_URL=psql://printacc_user:printacc_pass@127.0.0.1:5432/printacc_db
 
 script:
-# - pytest tests
- - python manage.py test
  - flake8
+ - pytest --cov
+
+after_success:
+  - codecov

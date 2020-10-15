@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.com/rozumalex/printacc.svg?branch=main)](https://travis-ci.org/github/rozumalex/printacc)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/rozumalex/printacc/blob/master/LICENSE)
+[![codecov](https://codecov.io/gh/rozumalex/printacc/branch/main/graph/badge.svg)](https://codecov.io/gh/rozumalex/printacc)
 
 Print Accounting System
 
@@ -39,7 +40,6 @@ sudo -u postgres psql
 CREATE DATABASE printacc_db;
 CREATE USER printacc_user with encrypted password 'printacc_pass';
 GRANT ALL PRIVILEGES ON DATABASE printacc_db TO printacc_user;
-ALTER USER printacc_user createdb;
 ```
 ***Note:*** then press Ctrl+D
 
